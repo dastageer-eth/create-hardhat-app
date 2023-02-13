@@ -1,5 +1,5 @@
 {
-  "name": "create-hardhat-app",
+  "name": "create-hardhat-testenv",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.1",
     "hardhat": "^2.12.7"
