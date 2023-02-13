@@ -18,6 +18,6 @@ describe("Test Contract", () => {
     it("change value", async () => {
       await contract.connect(owner).setNumber(2);
       expect(await contract.number()).to.equal(2);
-    }); 
+    });
   });
 });
