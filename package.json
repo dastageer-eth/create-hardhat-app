@@ -27,7 +27,7 @@
     "rimraf": "^4.1.2"
   },
   "description": "This project creates hardhat test environment with all dependencies of openzeppelin",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "hardhat.config.js",
   "directories": {
     "test": "test"
