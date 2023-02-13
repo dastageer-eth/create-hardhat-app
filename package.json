@@ -1,0 +1,42 @@
+{
+  "name": "create-hardhat-app",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.1",
+    "hardhat": "^2.12.7"
+  },
+  "scripts": {
+    "deploy": "npx hardhat run scripts/deploy.js",
+    "verify": "npx hardhat verify",
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "clean": "npx hardhat clean \n rimraf cache",
+    "rebuild": "npx hardhat clean \n rimraf cache \n rimraf node_modules \n npm install \n npx hardhat compile",
+    "lint": "prettier --check . ",
+    "format": "prettier --write . ",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@nomiclabs/hardhat-etherscan": "^3.1.6",
+    "@nomiclabs/hardhat-waffle": "^2.0.5",
+    "@openzeppelin/contracts": "^4.8.1",
+    "chai": "^4.3.7",
+    "dotenv": "^16.0.3",
+    "hardhat-gas-reporter": "^1.0.9",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.4",
+    "rimraf": "^4.1.2"
+  },
+  "description": "This project creates hardhat test environment with all dependencies of openzeppelin",
+  "version": "0.0.1",
+  "main": "hardhat.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dastageer-eth/create-hardhat-app.git"
+  },
+  "bin": "./bin/cli.js",
+  "author": "Dastageer Sayed",
+  "license": "ISC"
+}
