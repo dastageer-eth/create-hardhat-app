@@ -6,7 +6,7 @@ const runCommand = (command) => {
   try {
     execSync(`${command}`, { stdio: "inherit" });
   } catch (e) {
-    console.log(`Error to execute ${command}`, e);
+    console.log(`%cError to execute ${command}`, 'color: red', e);
     return false;
   }
   return true;
@@ -14,16 +14,17 @@ const runCommand = (command) => {
 
 const repoName = process.argv[2];
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/dastageer-eth/create-hardhat-app ${repoName}`;
-const installDepsCommand = `cd ${repoName} && touch .env && npm install`;
+const installDepsCommand = `cd ${repoName} && touch .env && rm -rf .git`;
 
-console.log(`Initializing the template with name ${repoName}`);
+console.log(`%cInitializing the template with name ${repoName}`, 'color: blue');
 const checkOut = runCommand(gitCheckoutCommand);
 if (!checkOut) process.exit(-1);
 
-console.log(`Installing dependencies for ${repoName}`);
+console.log(`%cInstalling dependencies for ${repoName}`, 'color: blue');
 const installedDeps = runCommand(installDepsCommand);
 if (!installedDeps) process.exit(-1);
 
-console.log(`Congratualtions! You are ready. Follow the following to start`);
-console.log(`cd ${repoName} `);
-console.log(`git checkout -b dev`);
+console.log(`%cCongratualtions! You are ready. Follow the following to start`, 'color: green; font-size: larger');
+console.log(`%ccd ${repoName} `, 'color: blue');
+console.log(`%cnpm install`, 'color: blue');
+console.log(`%cgit checkout -b dev`, 'color: blue');
